@@ -1,12 +1,13 @@
-import React from 'react'
+import React, {Component} from 'react'
+import NavbarComponent from './Navbar'
 import NavLink from './NavLink'
 import {Button} from 'react-bootstrap'
 
-export default React.createClass({
+class App extends Component{
   render() {
     return (
       <div>
-        <h1>React Router Tutorial</h1>
+        <NavbarComponent/>
         <ul role="nav">
           <li><NavLink to="/" onlyActiveOnIndex><Button bsStyle='primary'>Home</Button></NavLink></li>
           <li><NavLink to="/about"><Button bsStyle='info'>About</Button></NavLink></li>
@@ -16,4 +17,6 @@ export default React.createClass({
       </div>
     )
   }
-})
+}
+
+export default App
