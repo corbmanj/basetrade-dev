@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, '')))
 // app.use(bodyParser.json())
 
 // send all requests to index.html so browserHistory in React Router works
-app.get('/', function(req, res) {
+app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'))
 })
 
