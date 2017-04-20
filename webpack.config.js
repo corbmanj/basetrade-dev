@@ -8,7 +8,14 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react' }
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader?presets[]=es2015&presets[]=react' },
+      {
+        test: /\.(ttf|eot|svg|jpe?g|png|gif)/,
+        loaders: ['url-loader?name=[path][name].[ext]?[hash]']
+      },
     ]
   }
 }

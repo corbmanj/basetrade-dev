@@ -1,34 +1,37 @@
 import React, {Component} from 'react'
 import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap'
 import NavLink from './NavLink'
+import { LinkContainer } from 'react-router-bootstrap';
 
 class NavbarComponent extends Component{
   render () {
     return (
-      <Navbar inverse collapseOnSelect>
+      <Navbar inverse collapseOnSelect className="noBottomMargin fixed-top">
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">React-Bootstrap</a>
+            <div>BaseTrade TV</div>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <NavItem eventKey={1} href="#"><NavLink to="/" onlyActiveOnIndex>Home</NavLink></NavItem>
-            <NavItem eventKey={2} href="#"><NavLink to="/about">About</NavLink></NavItem>
-            <NavItem eventKey={2} href="#"><NavLink to="/repos">Repos</NavLink></NavItem>
-            {/*<NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">*/}
-              {/*<MenuItem eventKey={3.1}>Action</MenuItem>*/}
-              {/*<MenuItem eventKey={3.2}>Another action</MenuItem>*/}
-              {/*<MenuItem eventKey={3.3}>Something else here</MenuItem>*/}
+            <LinkContainer to="/" onlyActiveOnIndex><NavItem eventKey={1} href="#">Home</NavItem></LinkContainer>
+            {/*<LinkContainer to="/casters" onlyActiveOnIndex><NavItem eventKey={2} href="#">Casters</NavItem></LinkContainer>*/}
+            <NavDropdown eventKey={3} title="Casters" id="basic-nav-dropdown" inverse>
+              <LinkContainer to="/casters/zombiegrub"><NavItem eventKey={2} href="#">ZombieGrub</NavItem></LinkContainer>
+              <LinkContainer to="/casters/rifkin"><NavItem eventKey={2} href="#">Rifkin</NavItem></LinkContainer>
+              <LinkContainer to="/casters/niceusername"><NavItem eventKey={2} href="#">Nice_Username</NavItem></LinkContainer>
               {/*<MenuItem divider />*/}
               {/*<MenuItem eventKey={3.3}>Separated link</MenuItem>*/}
-            {/*</NavDropdown>*/}
+            </NavDropdown>
+            <LinkContainer to="/house" onlyActiveOnIndex><NavItem eventKey={2} href="#">Team House</NavItem></LinkContainer>
+            <LinkContainer to="/sponsor" onlyActiveOnIndex><NavItem eventKey={2} href="#">Sponsors</NavItem></LinkContainer>
+            <LinkContainer to="/calendar" onlyActiveOnIndex><NavItem eventKey={2} href="#">Calendar</NavItem></LinkContainer>
           </Nav>
-          <Nav pullRight>
-            <NavItem eventKey={1} href="#">Link Right</NavItem>
-            <NavItem eventKey={2} href="#">Link Right</NavItem>
-          </Nav>
+          {/*<Nav pullRight>*/}
+            {/*<NavItem eventKey={1} href="#">Link Right</NavItem>*/}
+            {/*<NavItem eventKey={2} href="#">Link Right</NavItem>*/}
+          {/*</Nav>*/}
         </Navbar.Collapse>
       </Navbar>
     )

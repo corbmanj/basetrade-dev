@@ -1,22 +1,40 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import NavbarComponent from './Navbar'
-import NavLink from './NavLink'
-import {Button} from 'react-bootstrap'
+import {Image} from 'react-bootstrap'
+import Modal from './Modal'
+import banner from '../static/img/BST_BannerText.png'
 
-class App extends Component{
-  render() {
+export default class App extends Component{
+
+  constructor(props) {
+    super(props)
+    this.state = {showModal: false}
+    this.closeModal = this.closeModal.bind(this)
+    this.openModal = this.openModal.bind(this)
+  }
+
+  closeModal () {
+    this.setState({showModal: false})
+  }
+
+  openModal (modalObj) {
+    this.setState({showModal: true, modalObj: modalObj})
+  }
+
+  render () {
+
     return (
       <div>
+        {this.state.showModal ? <Modal closeModal={this.closeModal} modalObj={this.state.modalObj}/> : null}
         <NavbarComponent/>
-        <ul role="nav">
-          <li><NavLink to="/" onlyActiveOnIndex><Button bsStyle='primary'>Home</Button></NavLink></li>
-          <li><NavLink to="/about"><Button bsStyle='info'>About</Button></NavLink></li>
-          <li><NavLink to="/repos"><Button bsStyle='warning'>Repos</Button></NavLink></li>
-        </ul>
-        {this.props.children}
+        <div className="relative banner">
+          {/*<Image src="http://placecage.com/1601/403" responsive />*/}
+          <Image src={banner} width="100%" responsive />
+        </div>
+        <div id="content" className="relative">
+          {React.cloneElement(this.props.children, { openModal: this.openModal})}
+        </div>
       </div>
     )
   }
 }
-
-export default App
