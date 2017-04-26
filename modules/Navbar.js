@@ -8,18 +8,6 @@ class NavbarComponent extends Component{
   constructor(props) {
     super(props)
     this.state = {}
-    // const baseUrl = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080'
-    // const that = this
-    // fetch(`${baseUrl}/twitch/stream/basetradeTV`)
-    //   .then(function(response) {
-    //     if (response.status >= 400) {
-    //       throw new Error("Bad response from server")
-    //     }
-    //     return response.json()
-    //   })
-    //   .then(function(response) {
-    //     that.state.isLive = !!response
-    //   })
     this.componentWillMount = this.componentWillMount.bind(this)
   }
 
@@ -61,7 +49,7 @@ class NavbarComponent extends Component{
               {/*<MenuItem eventKey={3.3}>Separated link</MenuItem>*/}
             {/*</NavDropdown>*/}
             <LinkContainer to="/house" onlyActiveOnIndex><NavItem eventKey={2} href="#">Team House</NavItem></LinkContainer>
-            <LinkContainer to="/tlft" onlyActiveOnIndex><NavItem eventKey={2} href="#">Team LFT</NavItem></LinkContainer>
+            {/*<LinkContainer to="/tlft" onlyActiveOnIndex><NavItem eventKey={2} href="#">Team LFT</NavItem></LinkContainer>*/}
             <LinkContainer to="/sponsor" onlyActiveOnIndex><NavItem eventKey={2} href="#">Sponsors</NavItem></LinkContainer>
             <LinkContainer to="/support" onlyActiveOnIndex><NavItem eventKey={2} href="#">Support</NavItem></LinkContainer>
             <LinkContainer to="/mod" onlyActiveOnIndex><NavItem eventKey={2} href="#">Mods</NavItem></LinkContainer>
