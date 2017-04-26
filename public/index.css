@@ -309,3 +309,22 @@ h1.overlay {
   margin: 10px;
   position: relative;
 }
+
+/* MEDIA QUERIES */
+@media (max-width: 991px) {
+  .navbar-header {
+    display: none;
+  }
+	.navbar-nav>li {
+		font-size: 0.8em;
+	}
+}
+
+@media (max-width: 768px) {
+  .navbar-header {
+    display: inline-block;
+  }
+	.navbar-nav>li {
+		font-size: 0.8em;
+	}
+}
