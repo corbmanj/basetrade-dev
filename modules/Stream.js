@@ -14,7 +14,7 @@ export default class Stream extends Component{
         </a>
         <div>{this.props.params.code}</div> */}
 				<iframe
-    			src="http://player.twitch.tv/?channel=baseTradeTV"
+    			src="//player.twitch.tv/?channel=baseTradeTV"
     			height="100%"
 					width="100%"
 					frameborder="0"
