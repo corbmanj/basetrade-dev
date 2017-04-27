@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Image} from 'react-bootstrap'
+import {Follow} from 'react-twitter-widgets'
 
 import zgImg from '../public/img/zombiegrub.jpg'
 import rifImg from '../public/img/rifkin.jpg'
@@ -36,7 +37,8 @@ export default class About extends Component{
           <div className="col left"><Image width="150" height="250" src={rifImg} responsive circle/></div>
           <div className="col right">
             <h2 className="text-center">Graham "Rifkin" Rogers, Founder</h2>
-            <p>
+            <Follow username="Rif_kingz" />
+						<p>
               Rifkin has loved StarCraft since he got it as a christmas present. He played many big game hunter maps with no
               rush rules dreaming of the day he would be grand master. Life didn't have this in his cards though. He grew
               up and grew frustrated with working a simple warehousing job. With the launch of StarCraft 2, he decided to
@@ -52,6 +54,7 @@ export default class About extends Component{
           <div className="col left"><Image width="150" height="250" src={zgImg} responsive circle/></div>
           <div className="col right">
             <h2 className="text-center">Jessica "ZombieGrub" Chernega, Caster</h2>
+						<Follow username="ZGgaming"/>
             <p>
               ZombieGrub has been playing StarCraft 2 since release, and started her casting career in 2012.
               She began by casting small weekly tournaments, team leagues (such as the URTL), and clan wars.
@@ -66,6 +69,7 @@ export default class About extends Component{
           <div className="col left"><Image width="150" height="250" src={nuImg} responsive circle/></div>
           <div className="col right">
             <h2 className="text-center">Joey "nice__username" Hay, YouTube Manager</h2>
+						<Follow username="nice__username" />
             <p>
               Nice__username is a freelance video editor and aspiring software developer. He grew up playing UMS
               games in StarCraft: Brood War and played StarCraft 2 since its release. Nice__username mostly focuses
