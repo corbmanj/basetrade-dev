@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react'
 import NavbarComponent from './Navbar'
 import {Image} from 'react-bootstrap'
 import Modal from './Modal'
-import banner from '../static/img/BST_BannerText.png'
+import banner from '../public/img/BST_BannerText.png'
 
 export default class App extends Component{
 
@@ -28,8 +28,7 @@ export default class App extends Component{
         {this.state.showModal ? <Modal closeModal={this.closeModal} modalObj={this.state.modalObj}/> : null}
         <NavbarComponent/>
         <div className="relative banner">
-          {/*<Image src="http://placecage.com/1601/403" responsive />*/}
-          <Image src={banner} width="100%" responsive />
+          <Image src={banner} width="80%" responsive bsClass="banner center img"/>
         </div>
         <div id="content" className="relative">
           {React.cloneElement(this.props.children, { openModal: this.openModal})}

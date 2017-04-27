@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Image} from 'react-bootstrap'
-import zgImg from '../../static/img/zombiegrub.jpg'
+import zgImg from '../../public/img/zombiegrub.jpg'
 import {Follow} from 'react-twitter-widgets'
 
 export default class Zombiegrub extends Component{

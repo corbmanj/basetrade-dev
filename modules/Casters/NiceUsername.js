@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Col, Image} from 'react-bootstrap'
-import nu from '../../static/img/nice_username.jpg'
+import nu from '../../public/img/nice_username.jpg'
 import {Follow} from 'react-twitter-widgets'
 
 export default class NiceUsername extends Component{

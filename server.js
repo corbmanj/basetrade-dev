@@ -1,24 +1,65 @@
 var express = require('express')
 var path = require('path')
 // var compression = require('compression')
-// require('isomorphic-fetch')
-// var bodyParser = require('body-parser')
-// var cors = require('cors')
+require('isomorphic-fetch')
+var bodyParser = require('body-parser')
+var cors = require('cors')
 
 var app = express()
 
 // app.use(compression())
-app.use(express.static(path.join(__dirname, '')))
-// app.use(cors())
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(cors())
 // parse application/x-www-form-urlencoded
-// app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
-// app.use(bodyParser.json())
+app.use(bodyParser.json())
+
+//send authCallback from twitch
+app.get('/authCallback', function(req, res) {
+  console.log('got auth response', req.query)
+  var code = req.query.code
+  var state = req.query.state
+  if (state === clientSecret) {
+    res.redirect(`/stream/${code}`)
+  }
+})
+
+app.get('/twitch/stream/:streamID', function (req, res) {
+  if (process.env.NODE_ENV !== 'production') {
+    return res.status(200).json('weather')
+  }
+  try {
+    // Retrieves location coordinates (latitude and longitude) from client request query
+    var url = `https://api.twitch.tv/kraken/streams/${req.params.streamID}`
+    console.log('Fetching '+url);
+
+    fetch(url, {headers: {
+      "Client-ID": twitchClientID
+    }})
+      .then(function(response) {
+        if (response.status != 200) {
+          res.status(response.status).json({'message': 'Bad response from Twitch server'})
+        }
+        return response.json()
+      })
+      .then(function(payload) {
+        res.status(200).json(payload.stream)
+      })
+  } catch(err) {
+    console.log("Errors occurred requesting Twitch API", err);
+    res.status(500).json({'message': 'Errors occurred requesting Twitch API', 'details' : err})
+  }
+})
 
 // send all requests to index.html so browserHistory in React Router works
 app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'))
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
+
+var twitchClientID = 'mafllvn2ycrixc59ygrh12orgg03p4'
+
+var clientSecret = '950g9loz5s9jsvnm861g4aizw74h6y'
 
 // Following is an example to proxy client request to DarkSky forecast API
 // var DARKSKY_SECRET_KEY = 'd309e32e8c63522fabf78f33fac01ca4'

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Col, Image} from 'react-bootstrap'
-import rifkinImg from '../../static/img/rifkin.jpg'
+import rifkinImg from '../../public/img/rifkin.jpg'
 import {Follow} from 'react-twitter-widgets'
 
 export default class Rifkin extends Component{

@@ -1,7 +1,10 @@
+var webpack = require('webpack')
+
 module.exports = {
   entry: './index.js',
 
   output: {
+    path: 'public',
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -17,5 +20,21 @@ module.exports = {
         loaders: ['url-loader?name=[path][name].[ext]?[hash]']
       },
     ]
-  }
+  },
+  plugins: process.env.NODE_ENV === 'production' ? [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin()
+  ] : [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('dev')
+      }
+    })
+  ]
 }
