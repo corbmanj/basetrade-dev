@@ -1,5 +1,13 @@
 import React, {Component} from 'react'
+import moment from 'moment'
 import {Image} from 'react-bootstrap'
+import cloudy from '../public/img/teamHouse/cloudy.jpg'
+import iaguz from '../public/img/teamHouse/iaguz.jpg'
+import major from '../public/img/teamHouse/major.jpg'
+import noregret from '../public/img/teamHouse/noregret.jpg'
+import scarlett from '../public/img/teamHouse/scarlett.jpg'
+import sortof from '../public/img/teamHouse/sortof.png'
+import time from '../public/img/teamHouse/time.jpg'
 
 class House extends Component{
   constructor(props) {
@@ -10,87 +18,100 @@ class House extends Component{
           id: 1,
           name: 'Jake "NoRegreT" Umpleby',
           shortName: 'House Mom',
-          image: "http://placecage.com/250/251",
-          age: 26,
+          image: noregret,
+          birthdate: '1996-03-25',
           awards: [],
           race: 'Zerg',
           team: null,
-          nationality: 'Canada'
+          nationality: 'Canada',
+          highlights: {}
         },
         {
           id: 2,
           name: 'Juan Carlos "MajOr" Tena Lopez',
           shortName: 'MajOr',
-          image: "http://placecage.com/250/253",
-          age: 26,
+          image: major,
+          birthdate: '1993-05-20',
           awards: [],
           race: 'Terran',
           team: null,
-          nationality: 'Mexico'
+          nationality: 'Mexico',
+          highlights: {}
         },
         {
           id: 3,
           name: 'Sasha "Scarlett" Hostyn',
           shortName: 'Scarlett',
-          image: "http://placecage.com/250/252",
-          age: 'Unknown',
+          image: scarlett,
+          birthdate: '1993-12-14',
           awards: [],
           race: 'Zerg (Sometimes Protoss?)',
           team: null,
-          nationality: 'Canada'
+          nationality: 'Canada',
+          highlights: {}
         },
         {
           id: 4,
           name: 'Rickard "SortOf" Bergman',
           shortName: 'SortOf',
-          image: "http://placecage.com/251/250",
-          age: 'Unknown',
+          image: sortof,
+          birthdate: '1993-07-24',
           awards: [],
           race: 'Zerg',
           team: null,
-          nationality: 'Sweden'
+          nationality: 'Sweden',
+          highlights: {}
         },
         {
           id: 5,
           name: 'Li "TIME" Peinan',
           shortName: 'TIME',
-          image: "http://placecage.com/251/251",
-          age: 'Unknown',
+          image: time,
+          birthdate: '2000-06-28',
           awards: [],
           race: 'Terran',
           team: 'X-Team',
-          nationality: 'China'
+          nationality: 'China',
+          highlights: {}
         },
         {
           id: 6,
           name: 'Gao "Cloudy" Yuan',
           shortName: 'Cloudy',
-          image: "http://placecage.com/251/252",
-          age: 'Unknown',
+          image: cloudy,
+          birthdate: '1994-04-20',
           awards: [],
           race: 'Protoss',
           team: 'X-Team',
-          nationality: 'China'
+          nationality: 'China',
+          highlights: {}
         },
         {
           id: 7,
           name: 'Ethan "Iaguz" Zugai',
           shortName: 'Iaguz',
-          image: "http://placecage.com/251/253",
-          age: 'Unknown',
+          image: iaguz,
+          birthdate: '1990-11-09',
           awards: [],
           race: 'Terran',
           team: 'X-Team',
-          nationality: 'Australia'
+          nationality: 'Australia',
+          highlights: {}
         }
       ]}
 
   }
   render () {
+    const calcAge = (player) => {
+      let bd = moment(player.birthdate)
+      let today = moment()
+      return today.diff(bd, 'years')
+    }
     const playerCards = this.state.players.map(player => {
+      player.age = calcAge(player)
       return (
         <div key={player.id} className="flex-item" onClick={() => this.props.openModal(player)}>
-          <Image bsClass="center img" src={player.image} />
+          <Image width="250" bsClass="center img" src={player.image} />
           <div className="player">
             <h4>{player.name}</h4>
             <p>{player.race}</p>

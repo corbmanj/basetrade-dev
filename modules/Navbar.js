@@ -22,7 +22,6 @@ class NavbarComponent extends Component{
         return response.json()
       })
       .then(function(response) {
-        console.log(response)
         that.setState({isLive: !!response})
       })
   }
