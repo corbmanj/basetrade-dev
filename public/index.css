@@ -1,3 +1,12 @@
+* {
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+p {
+  font-size: 12pt;
+  margin-top: 5px;
+}
+
 /* NAVBAR */
 .live-ind {
   position: absolute;
@@ -21,8 +30,9 @@
 }
 
 .banner {
-  background-color: #a9a9a9;
+  background-color: #888;
   padding: 15px;
+  box-shadow: 0 5px 2px #888;
 }
 
 h1.overlay {
@@ -45,6 +55,10 @@ h1.overlay {
   text-align: center;
 }
 
+h2.text-center {
+  font-family: 'Raleway', sans-serif;
+}
+
 .center {
   margin: auto;
 }
@@ -54,6 +68,18 @@ h1.overlay {
   margin: 10px;
   padding: 15px;
   background: none;
+}
+
+#news h3 {
+  text-align: center;
+}
+
+#news p {
+  text-align: justify;
+}
+
+#news img {
+  height: 200px;
 }
 
 /* ABOUT */

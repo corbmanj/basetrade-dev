@@ -22,7 +22,6 @@ class NavbarComponent extends Component{
         return response.json()
       })
       .then(function(response) {
-        console.log(response)
         that.setState({isLive: !!response})
       })
   }
@@ -52,7 +51,7 @@ class NavbarComponent extends Component{
             {/*<LinkContainer to="/tlft" onlyActiveOnIndex><NavItem eventKey={2} href="#">Team LFT</NavItem></LinkContainer>*/}
             <LinkContainer to="/sponsor" onlyActiveOnIndex><NavItem eventKey={2} href="#">Sponsors</NavItem></LinkContainer>
             <LinkContainer to="/support" onlyActiveOnIndex><NavItem eventKey={2} href="#">Support</NavItem></LinkContainer>
-            <LinkContainer to="/mod" onlyActiveOnIndex><NavItem eventKey={2} href="#">Mods</NavItem></LinkContainer>
+            {/*<LinkContainer to="/mod" onlyActiveOnIndex><NavItem eventKey={2} href="#">Mods</NavItem></LinkContainer>*/}
             <LinkContainer to="/rules" onlyActiveOnIndex><NavItem eventKey={2} href="#">Rules</NavItem></LinkContainer>
             <LinkContainer to="/stream" onlyActiveOnIndex><NavItem eventKey={2} href="#">Stream&nbsp;&nbsp;<div className={className} /></NavItem></LinkContainer>
             <LinkContainer to="/calendar" onlyActiveOnIndex><NavItem eventKey={2} href="#">Calendar</NavItem></LinkContainer>
