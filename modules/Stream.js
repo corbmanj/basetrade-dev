@@ -17,9 +17,9 @@ export default class Stream extends Component{
     			src="//player.twitch.tv/?channel=baseTradeTV"
     			height="100%"
 					width="100%"
-					frameborder="0"
+					frameBorder="0"
 					scrolling="no"
-					allowfullscreen="true">
+					allowFullScreen="true">
 				</iframe>
       </div>
     )
