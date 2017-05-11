@@ -126,7 +126,7 @@ var clientSecret = '950g9loz5s9jsvnm861g4aizw74h6y'
 //
 // app.use('/db', dbRoutes);
 
-var PORT = process.env.PORT || 8080
+var PORT = process.env.PORT || 8082
 app.listen(PORT, function() {
   console.info('Production Express server running at localhost:', PORT)
 })
