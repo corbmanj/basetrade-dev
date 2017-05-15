@@ -1,6 +1,7 @@
 node_modules
 .idea
 .idea/*
+.idea/
 public/bundle.js
 public/*.ttf
 public/*.eot

@@ -8,34 +8,36 @@ class Home extends Component{
     return (
       <div id="home">
         <Jumbotron bsClass="jumbo jumbotron">
-          <h1>Dreamhack Austin Review!</h1>
-          <p>
-            This is where you should put some of the latest updates that you'd like to call peoples' attention to.
-            Link could be internal or external
-          </p>
-          <div>
-            <Button bsStyle="primary">Read more</Button>
-          </div>
-        </Jumbotron>
-
-        <Col id="news" sm={6} md={4}>
-          <h2 className="text-center">News</h2>
-          <Image height="200" bsClass="center img" src={shirt} responsive />
-          <h3>The new shirt is live!</h3>
+          <h1 className="center">The new shirt is live!</h1>
+          <Image height="200" bsClass="left img" src={shirt} responsive />
           <p>
             We love your faces and made this shirt design with all of you in mind. It looks great, but most of the
             emotes, memes, and inside jokes are for our dedicated watchers &lt;3. We hope you appreciate it and consider
             purchasing one!
           </p>
-          <p>The campaign runs for 3 weeks total <a href="https://teespring.com/twitch/bt-chat-memes" target="_blank">here</a></p>
+          <p>The campaign runs for 3 weeks total <a href="//teespring.com/twitch/bt-chat-memes" target="_blank">here</a>.</p>
           <p>
             If we sell at least 50 shirts in 3 weeks, we'll be able to run a second campaign :-) Thanks for your
             continued support, and we hope you'll check out the shirt at least!
           </p>
+
+        </Jumbotron>
+
+        <Col id="news" sm={6} md={4}>
+          <h2 className="text-center">News</h2>
+          <Image height="200" bsClass="center img" src={shirt} responsive />
+          <h3>Did we mention?</h3>
+          <p>
+            Seriously though, you should really buy one!
+          </p>
+          <div>
+            <Button bsStyle="primary"><a href="//teespring.com/twitch/bt-chat-memes" target="_blank">Click Here!</a></Button>
+          </div>
+
         </Col>
         <Col sm={6} md={4}>
           <h2 className="text-center">Schedule</h2>
-          <Image bsClass="center img" src="http://placecage.com/201/201" responsive circle />
+          <Image bsClass="center img" src="//placecage.com/201/201" responsive circle />
           <p></p>
           <ul>
             <li><b>Tuesday</b><span> - Olimoleauge 7am EST</span></li>
