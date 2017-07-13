@@ -53,7 +53,7 @@ class NavbarComponent extends Component{
             <LinkContainer to="/support" onlyActiveOnIndex><NavItem eventKey={2} href="#">Support</NavItem></LinkContainer>
             {/*<LinkContainer to="/mod" onlyActiveOnIndex><NavItem eventKey={2} href="#">Mods</NavItem></LinkContainer>*/}
             <LinkContainer to="/rules" onlyActiveOnIndex><NavItem eventKey={2} href="#">Rules</NavItem></LinkContainer>
-            <LinkContainer to="/stream" onlyActiveOnIndex><NavItem eventKey={2} href="#">Stream&nbsp;&nbsp;<div className={className} /></NavItem></LinkContainer>
+            <LinkContainer to="/stream" onlyActiveOnIndex><NavItem eventKey={2} href="#">Stream<div className={className} /></NavItem></LinkContainer>
             <LinkContainer to="/calendar" onlyActiveOnIndex><NavItem eventKey={2} href="#">Calendar</NavItem></LinkContainer>
           </Nav>
           {/*<Nav pullRight>*/}

@@ -18,6 +18,7 @@ p {
   border: 1px solid white;
   background-color: #444;
   display: inline-block;
+  margin-left: 10px;
 }
 
 .live {
