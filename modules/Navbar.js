@@ -12,7 +12,7 @@ class NavbarComponent extends Component{
   }
 
   componentWillMount () {
-    const baseUrl = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8080'
+    const baseUrl = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8081'
     const that = this
     fetch(`${baseUrl}/twitch/stream/basetradetv`)
       .then(function(response) {
