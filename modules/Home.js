@@ -41,7 +41,7 @@ class Home extends Component{
           <Follow username="BaseTradeTV" />
           <Timeline
             dataSource={{sourceType: 'profile', screenName: 'BaseTradeTV'}}
-            options={{height: '1000'}}
+            options={{height: '500'}}
           />
         </Col>
 
