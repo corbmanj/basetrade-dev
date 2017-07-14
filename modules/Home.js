@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Col, Image, Jumbotron, Button, Well} from 'react-bootstrap'
 import {Timeline, Follow} from 'react-twitter-widgets'
 import dh from '../public/img/dreamhack-photo-300x128.png'
+import cal from '../public/img/calendar.png'
 
 class Home extends Component{
   render() {
@@ -34,7 +35,7 @@ class Home extends Component{
         </Col>
         <Col sm={6} md={4}>
           <h2 className="text-center">Schedule</h2>
-          <Image bsClass="center img" src="//placecage.com/201/201" responsive circle />
+          <a href="/calendar"><Image bsClass="center img" src={cal} responsive /></a>
           <p>Check out the upcoming streams on our <a href="/calendar">Calendar page</a></p>
         </Col>
         <Col sm={6} md={4}>
