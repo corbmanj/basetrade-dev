@@ -1,8 +1,9 @@
-import React, {Component, PropTypes} from 'react'
+import React, {Component} from 'react'
 import NavbarComponent from './Navbar'
 import {Image} from 'react-bootstrap'
 import Modal from './Modal'
 import banner from '../public/img/BST_BannerText.png'
+
 
 export default class App extends Component{
 

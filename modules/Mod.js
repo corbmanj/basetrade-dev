@@ -1,7 +1,5 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-export default class Mod extends Component{
-  render () {
-    return <span>Mods and mod related things</span>
-  }
+export default function Mod () {
+  return <span>Mods and mod related things</span>
 }

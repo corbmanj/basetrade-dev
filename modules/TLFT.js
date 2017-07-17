@@ -1,7 +1,5 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-export default class TLFT extends Component{
-  render () {
-    return <span>Byul!</span>
-  }
+export default function TLFT () {
+  return <span>Byul!</span>
 }

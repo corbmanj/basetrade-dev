@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem} from 'react-bootstrap'
+import {Navbar, Nav, NavItem} from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap';
 require('es6-promise').polyfill()
 require('isomorphic-fetch')
@@ -40,13 +40,6 @@ class NavbarComponent extends Component{
           <Nav>
             <LinkContainer to="/" onlyActiveOnIndex><NavItem eventKey={1} href="#">Home</NavItem></LinkContainer>
             <LinkContainer to="/about" onlyActiveOnIndex><NavItem eventKey={2} href="#">About Us</NavItem></LinkContainer>
-            {/*<NavDropdown eventKey={3} title="Casters" id="basic-nav-dropdown" inverse>*/}
-              {/*<LinkContainer to="/casters/zombiegrub"><NavItem eventKey={2} href="#">ZombieGrub</NavItem></LinkContainer>*/}
-              {/*<LinkContainer to="/casters/rifkin"><NavItem eventKey={2} href="#">Rifkin</NavItem></LinkContainer>*/}
-              {/*<LinkContainer to="/casters/niceusername"><NavItem eventKey={2} href="#">Nice_Username</NavItem></LinkContainer>*/}
-              {/*<MenuItem divider />*/}
-              {/*<MenuItem eventKey={3.3}>Separated link</MenuItem>*/}
-            {/*</NavDropdown>*/}
             <LinkContainer to="/house" onlyActiveOnIndex><NavItem eventKey={2} href="#">Team House</NavItem></LinkContainer>
             {/*<LinkContainer to="/tlft" onlyActiveOnIndex><NavItem eventKey={2} href="#">Team LFT</NavItem></LinkContainer>*/}
             <LinkContainer to="/sponsor" onlyActiveOnIndex><NavItem eventKey={2} href="#">Sponsors</NavItem></LinkContainer>
@@ -56,10 +49,6 @@ class NavbarComponent extends Component{
             <LinkContainer to="/stream" onlyActiveOnIndex><NavItem eventKey={2} href="#">Stream<div className={className} /></NavItem></LinkContainer>
             <LinkContainer to="/calendar" onlyActiveOnIndex><NavItem eventKey={2} href="#">Calendar</NavItem></LinkContainer>
           </Nav>
-          {/*<Nav pullRight>*/}
-            {/*<NavItem eventKey={1} href="#">Link Right</NavItem>*/}
-            {/*<NavItem eventKey={2} href="#">Link Right</NavItem>*/}
-          {/*</Nav>*/}
         </Navbar.Collapse>
       </Navbar>
     )
